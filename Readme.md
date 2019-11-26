@@ -73,10 +73,10 @@ ssn_category_completion.ipynb
 svm_category_completion.ipynb
 ```
 
-* Word analogy  (Paper Section 4.2)
+* Word analogy  (Paper Section 4.2) (not yet implemented)
 
 ```bash
-evaluate_on_all_mod.ipynb
+evaluate_on_all_mod.ipynb (not yet implemented)
 ```
 
 
