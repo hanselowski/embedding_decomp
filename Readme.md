@@ -54,26 +54,26 @@ In order to run the experiments from the paper run the following jupyter boteboo
 
 
 
-* Sem tree 
+* Semantic Tree (Paper Section 3.1)
 
 ```bash
 semantic_tree_model.ipynb
 ```
 
-* Sem space networks
+* Semantic Space Networks (Paper Section 3.2)
 
 ```bash
 semantic_space_networks.ipynb
 ```
 
-* Category completion
+* Category completion  (Paper Section 4.1)
 
 ```bash
 ssn_category_completion.ipynb
 svm_category_completion.ipynb
 ```
 
-* Word analogy
+* Word analogy  (Paper Section 4.2)
 
 ```bash
 ```
