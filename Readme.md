@@ -76,6 +76,7 @@ svm_category_completion.ipynb
 * Word analogy  (Paper Section 4.2)
 
 ```bash
+evaluate_on_all_mod.ipynb
 ```
 
 
