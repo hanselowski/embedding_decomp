@@ -45,7 +45,7 @@ Download pretrained Word2Vec Vectors
 
 ### Run experiments
 
-In order to run the experiments from the paper run the following jupyter botebooks: 
+In order to reproduce the experiments from the paper run the following jupyter notebooks: 
 
 
 
