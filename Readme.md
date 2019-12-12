@@ -40,11 +40,6 @@ Download pretrained Word2Vec Vectors
 ```bash
     wget https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip
     mkdir -p data/word2vec
-    
-    wget https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec
-    mkdir -p data/fasttext
-    unzip wiki-news-300d-1M.vec.zip -d data/word2vec
-
 ```
 
 
