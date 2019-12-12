@@ -36,40 +36,43 @@ Download pretrained GloVe Vectors
     unzip glove.6B.zip -d data/glove
     gzip data/glove/*.txt
 ```
-Download pretrained Wiki FastText Vectors
+Download pretrained Word2Vec Vectors
 ```bash
     wget https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip
-    mkdir -p data/fasttext
-    unzip wiki.en.zip -d data/fasttext
-    
-    or (in this case the folder path "fasttext_path": "data/fasttext/wiki.en.bin" the config files in the folders conf_snopes_paper and conf_snopes_stance_paper need to be changed to "data/fasttext/wiki-news-300d-1M.vec" ) 
-    
-    wget https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec
-    mkdir -p data/fasttext
-    unzip wiki-news-300d-1M.vec.zip -d data/fasttext
-
+    mkdir -p data/word2vec
 ```
 
 
 ### Run experiments
 
-Sem tree
-Sem space networks
-Category completion
-Word analogy
+In order to reproduce the experiments from the paper run the following jupyter notebooks: 
 
 
-* ...:
+
+* Semantic Tree (Paper Section 3.1)
+
 ```bash
-    ....
+semantic_tree_model.ipynb
 ```
 
+* Semantic Space Networks (Paper Section 3.2)
 
+```bash
+semantic_space_networks.ipynb
+```
 
-* Proceed with downloading the data set, the embeddings, the models and the evidence data
+* Category completion  (Paper Section 4.1)
 
+```bash
+ssn_category_completion.ipynb
+svm_category_completion.ipynb
+```
 
+* Word analogy  (Paper Section 4.2) (not yet implemented)
 
+```bash
+evaluate_on_all_mod.ipynb (not yet implemented)
+```
 
 
 
