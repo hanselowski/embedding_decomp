@@ -1,6 +1,10 @@
 import numpy as np
 import operator
 
+'''
+various functions not associated with an object needed for the processing of word vectors
+'''
+
 def length(v):
     return np.linalg.norm(v)
 
@@ -203,82 +207,3 @@ def find_insts(model, source, normalize = False, voc_size = 10000):
         cnt += 1
     print('')
     return lst_out
-
-''' delete
-def find_insts(model, source):
-    print('instances of the source:')
-    words = []
-
-    try: # handling differenence word2vec and other embeddings
-        for i in range(11000):
-            word = model.index2word[i]
-            instance = model[word]
-            sub_inst = hyper_test(instance, source)
-            if sub_inst == 1:
-                words.append(word)
-    except:
-        vocabulary = model.vocabulary.words
-        for i in range(11000):
-            instance = model[vocabulary[i]]
-            sub_inst = hyper_test(instance, source)
-            if sub_inst == 1:
-                words.append(vocabulary[i]) 
-                    
-    len_dict = {}
-    for w in words:
-        w_vec = model[w]
-        inst_len = length(w_vec)
-        cos = cosine(source, w_vec)
-        inst_len_trunk = cos * inst_len
-        len_dict[w] = inst_len_trunk
-    sorted_keys = sorted(len_dict.items(), key=operator.itemgetter(1))
-    reversed_keys = reversed(sorted_keys)
-    cnt = 0
-    lst_out = []
-        
-    for k in reversed_keys:
-        # print(k)
-        lst_out.append(k[0])
-        if cnt > 1000:
-            break
-        cnt += 1
-    print('')
-    return lst_out
-
-    
-def find_insts_norm(model, source):
-    print('instances of the source:')
-    words = []
-
-    try: # handling differenence word2vec and other embeddings
-        for i in range(11000):
-            word = model.index2word[i]
-            instance = model[word]
-            sub_inst = hyper_test(instance, source)
-            if sub_inst == 1:
-                words.append(word)
-    except:
-        vocabulary = model.vocabulary.words
-        for i in range(11000):
-            instance = model[vocabulary[i]]
-            sub_inst = hyper_test(instance, source)
-            if sub_inst == 1:
-                words.append(vocabulary[i]) 
-                
-    len_dict = {}
-    for w in words:
-        w_vec = model[w]
-        inst_len = length(w_vec)
-        cos = cosine(source, w_vec)
-        inst_len_trunk = cos * inst_len
-        len_dict[w] = inst_len_trunk
-    sorted_keys = sorted(len_dict.items(), key=operator.itemgetter(1))
-    reversed_keys = reversed(sorted_keys)
-    cnt = 0
-    for k in reversed_keys:
-        print(k)
-        if cnt > 50:
-            break
-        cnt += 1
-    print('')
-'''

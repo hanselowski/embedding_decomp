@@ -3,7 +3,7 @@ import operator
 from utils.methods import length, unit, cosine, find_vecs, sort_disct
 
 class Tree:
-    """Tree class"""
+    """Semantic tree class"""
         
     def __init__(self, model, word_lst, vec_lst = None, normalize = False):
         self.normalize = normalize

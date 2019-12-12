@@ -44,16 +44,9 @@ def abstractBranches(model, vec):
     for i in range(len(roots)):
         for j in range(i+1,len(roots)):   
             cur_ind = findIndx(ind1[i], ind1[j])
-            # find_sim_cos(model, tree_abs.root+tree_abs.branches[1],  5)
+
             if len(cur_ind) < 3:
-                # print(i,j)
-                # print(cur_ind)
-                # tree = Tree(model, [roots[i], roots[j]], [unit(model[roots[i]]), unit(model[roots[j]])])
                 tree_obj = Tree(model, ['root1', 'root2'], [roots[i], roots[j]])
-                
-                # find_sim_cos(model, tree_obj.root + tree_obj.branches[0], 5) 
-                # find_sim_cos(model, tree_obj.root + tree_obj.branches[1], 5) 
-                
                 trees.append(tree_obj)
                 tree_roots.append(tree_obj.root)
                 ind2.append(cur_ind)
@@ -68,21 +61,14 @@ def abstractBranches(model, vec):
         for l in range(len(ind2)):
             for j in range(len(ind2[l])): # length should be two anyway
                 if i == ind2[l][j]:
-                    # print(i,j)
-                    # print(ind2[l])
-                    # print(str(i)+'-'+str(j))
                     key_pos.append(l)
                     biv.append(j)
                         
         # print('next summation: ')
         sum_vec = np.zeros(len(model[vec[0]]))
         for l in range(len(key_pos)):
-            # print(l, key_pos[l],biv[l])
             sum_vec = sum_vec + trees[key_pos[l]].branches[biv[l]]
-            # find_sim_cos(model, trees[key_pos[l]].root + trees[key_pos[l]].branches[biv[l]], 5) 
-        
-        # print('key_pos',len(key_pos))
-        # print(sum_vec)
+
         branches.append(sum_vec/len(key_pos))
     root_out = Tree(model, names, tree_roots)
     return root_out, branches
@@ -98,20 +84,17 @@ def root_branches(model, dat):
             tree = Tree(model, [dat[i], dat[j]], [model[dat[i].lower()], model[dat[j].lower()]])
             branchs[str(i)+' '+str(j)] = [tree.branches[0], tree.branches[1]]
     branchs_filt = []
-    # print('len(branchs)',str(len(branchs)))
+
     for i in range(len(dat)):
-        # print('index. ',i)
         branchs_tmp = []
         for k in branchs.keys():
             key_lst = k.split(' ')
             if   i == int(key_lst[0]):
-                # print(i)
                 branchs_tmp.append(branchs[k][0])
             elif i == int(key_lst[1]):
-                # print(i)
                 branchs_tmp.append(branchs[k][1])
-        # print(len(dat[:len(branchs_tmp)]),' ',len(branchs_tmp))
+
         tree = Tree(model, dat[:len(branchs_tmp)], branchs_tmp) 
         branchs_filt.append(tree.root)
-        # branchs_filt.append(sum(branchs_tmp)/len(branchs_tmp))
+
     return branchs_filt
