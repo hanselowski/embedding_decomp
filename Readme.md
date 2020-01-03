@@ -78,7 +78,7 @@ evaluate_on_all_mod.ipynb (not yet implemented)
 
 
 ### Contacts:
-  * hanselowski at gmail.com
+  * hanselowski .a.t. gmail.com
   * https://www.informatik.tu-darmstadt.de/ukp/ukp_home/
   * https://www.tu-darmstadt.de    
 
